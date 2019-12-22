@@ -1,0 +1,63 @@
+Q2 matrix rotation
+
+#include<stdio.h>
+#include<string.h>
+
+int main() {
+	int n, m, k;
+	scanf("%d %d %d", &n, &m, &k);
+
+	int a[n][m];
+	for(int i = 0; i < n; i++)
+		for(int j = 0; j < m; j++)
+			scanf("%d", &a[i][j]);
+
+	// Your code here...
+	
+	int temp = a[0][0], temp2;
+	
+	for (int p = 0; p < k; ++p) 
+	{
+		for(int i = 0; i<n; ++i)
+		{
+	    		for (int j = 0; j<m; ++j)
+	    		{
+	        		if (j == m - 1)
+	        		{
+	            			if( i != n-1)
+	            			{
+	                			temp2 = a[i+1][0];
+	                			a[i+1][0] = temp;
+	                			temp = temp2;
+	            			}
+	            
+	            			else
+	            			{
+	                			a[0][0] = temp;
+	            			}
+	        		}
+	        
+	        		else
+	        		{
+	            			temp2 = a[i][j+1];
+	            			a[i][j+1] = temp;
+	            			temp = temp2;
+	        		}
+	    		}
+		}
+	}
+	
+	for(int i = 0; i < n; ++i)
+	{
+	    for(int j = 0; j < m; ++j)
+	    {
+	        if(j != m-1)
+	            printf("%d ", a[i][j]);
+	        else
+	            printf("%d", a[i][j]);
+	    }
+	    printf("\n");
+	}
+	
+	return 0;
+}

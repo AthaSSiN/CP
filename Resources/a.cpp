@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
-
 #define M 1000000007
 #define PI 3.1415926
 #define pb push_back
@@ -23,12 +22,29 @@ typedef priority_queue <int> pq;
 
 int main(){
 	fastio;
-	
-	/*int quer;
+	int quer;
 	cin>>quer;
 	forf(quer,qe)
 	{
-
-	}*/
+        int n;
+        cin >> n;
+        int a[n][2];
+        cin>>a[0][0]>>a[0][1];
+        int valid = 1;
+        if(a[0][0] < a[0][1])
+            valid = 0;
+        forf(n-1,i)
+        {
+            cin>>a[i+1][0]>>a[i+1][1];
+            if(a[i+1][0] < a[i][0] || a[i+1][1] < a[i][1] || (a[i+1][0] - a[i][0]) < (a[i+1][1] - a[i][1]))
+                valid = 0;
+        }
+        
+        if(valid)
+            cout<<"YES\n";
+        else
+            cout<<"NO\n";
+	}
 	return 0;
 }
+

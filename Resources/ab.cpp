@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
-
 #define M 1000000007
 #define PI 3.1415926
 #define pb push_back
@@ -23,12 +22,20 @@ typedef priority_queue <int> pq;
 
 int main(){
 	fastio;
-	
-	/*int quer;
+	int quer;
 	cin>>quer;
 	forf(quer,qe)
 	{
-
-	}*/
+        int n,a,b;
+        cin>>n>>a>>b;
+        string ans = "";
+        forf(n,i)
+        {
+            ans+=(char)('a' + i%b);
+        }
+        
+        cout<<ans;
+	}
 	return 0;
 }
+

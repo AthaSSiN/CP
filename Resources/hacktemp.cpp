@@ -2,6 +2,7 @@
 using namespace std;
 typedef long long ll;
 
+const auto start_time = std::chrono::high_resolution_clock::now();
 #define M 1000000007
 #define PI 3.1415926
 #define pb push_back
@@ -23,12 +24,24 @@ typedef priority_queue <int> pq;
 
 int main(){
 	fastio;
-	
-	/*int quer;
+
+    	   	
+	int quer;
 	cin>>quer;
 	forf(quer,qe)
 	{
-
-	}*/
+		ll n;
+        int count=0;
+        cin>>n;
+        for(ll i=(n-1);i>(n/2);i--){
+            count++;
+        }
+        cout<<count<<"\n";
+	}
+	auto end_time = std::chrono::high_resolution_clock::now();
+    	std::chrono::duration<double> diff = end_time - start_time;
+    	
+	cout<<"Time Taken : "<<diff.count()<<"s\n";
 	return 0;
 }
+
